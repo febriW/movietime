@@ -8,12 +8,14 @@
             <p class="text-subtitleCard font-thin text-sm">2020</p>
         </div>
         <div class="group-hover/card:block hidden absolute flex flex-col gap-12 justify-center items-center bg-cardHover w-full h-full z-20 text-white text-lg font-normal">
-            <div class="flex flex-row gap-2 font-bold text-2xl">
-                <img src="~/assets/icon/Star.svg" class="flex justify-center h-[32px] w-[32px]" />
-                <p>6.5</p>
+            <div class="flex flex-col justify-center items-center gap-12 h-full">
+                <div class="flex flex-row gap-2 font-bold text-2xl">
+                    <img src="~/assets/icon/Star.svg" class="flex justify-center h-[32px] w-[32px]" />
+                    <p>6.5</p>
+                </div>
+                <p>Genre</p>
+                <button class="flex justify-center bg-buttonCard px-8 py-2 font-bold text-sm rounded-3xl w-[107px]">View</button>
             </div>
-            <p>Genre</p>
-            <button class="flex justify-center bg-buttonCard px-8 py-2 font-bold text-sm rounded-3xl w-[107px]">View</button>
         </div>
     </div>
 </template>
