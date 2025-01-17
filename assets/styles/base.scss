@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.baseColor1 {
+    @apply bg-baseColor1
+}
+
+.baseColor2 {
+    @apply bg-baseColor2
+}
+
+.header-wrap {
+    @extend .baseColor1;
+    @apply w-full px-32 py-4 h-[66px] justify-center
+}
+
+
+header {
+    @apply w-full flex flex-row justify-center items-center;
+
+    p {
+        @apply text-white;
+    }
+
+    .logo {
+        @apply mr-[36.9px]
+    }
+
+    .searchbar {
+        @extend .baseColor2;
+        @apply flex flex-row gap-2 w-full max-w-[571px] px-[10px] py-[6px] rounded mr-[45px];
+
+        input {
+            @apply w-full border-0 bg-transparent outline-none text-white
+        }
+    }
+    
+    .header-categories {
+        @apply relative flex flex-row gap-[11px] items-center text-white mr-[48px] hover:cursor-pointer;
+        div > p {
+            @apply text-gray-700 font-semibold text-base text-start hover:bg-blue-300 rounded p-4;
+        }
+    }
+
+
+    .header-menu {
+        @apply flex flex-row gap-[39px] text-white;
+    }
+}
