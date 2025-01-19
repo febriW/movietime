@@ -1,0 +1,44 @@
+
+.carousel__wrapper {
+    @apply relative flex w-[541.25px] h-[364.61px];
+
+    img {
+        @apply absolute w-1/2 object-cover;
+    }
+
+    .wrapper__content {
+        @apply my-[20.26px] h-full;
+
+        &__right {
+            @apply bg-black justify-end h-full w-full ml-[25.64px] pr-[20.53px];
+
+            &__grid {
+                @apply grid grid-cols-2;
+
+                &--rating {
+                    @apply flex items-center mb-2;
+                }
+
+                .star {
+                    @apply text-yellow-400 text-lg;
+                }
+
+                .rating {
+                    @apply text-lg font-bold ml-1 text-white;
+                }
+
+                .title {
+                    @apply text-xl font-semibold text-white;
+                }
+
+                .subtitle {
+                    @apply text-sm text-gray-400;
+                }
+
+                .description {
+                    @apply text-sm mt-2 text-gray-300 flex-grow;
+                }
+            }
+        }
+    }
+}
