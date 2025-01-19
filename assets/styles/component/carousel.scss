@@ -1,0 +1,27 @@
+.carousel__pagination {
+    @apply items-center w-fit
+}
+
+.carousel__slide {
+    @apply mb-14;
+
+    &:not(.carousel__slide--active){
+        #card-carousel{
+            @apply bg-baseColor2 z-10 opacity-50
+        }
+    }
+}
+
+
+
+.carousel__pagination-button {
+    @apply w-3 h-3 rounded-full bg-[#8e9194]
+}
+
+.carousel__pagination-button--active{
+    @apply bg-[#E74C3C] w-[60px] h-[12px] rounded-xl hover:bg-[#E74C3C]
+}
+
+.carousel__pagination {
+    @apply bottom-5
+}
