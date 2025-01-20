@@ -5,6 +5,6 @@ const route = useRoute()
 <template>
   <div>
     <Carousel />
-    <Card />
+    <HomePage />
   </div>
 </template>
