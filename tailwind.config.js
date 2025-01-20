@@ -15,7 +15,7 @@ export default {
     },
     extend: {
         colors: {
-            baseColor1: 'rgba(30,35,42, 0.9)',
+            baseColor1: 'rgba(30,35,43, 0.9)',
             baseColor2: 'rgba(41,46,53,1)',
             titleCard: 'rgba(146, 146, 146, 1)',
             subtitleCard: 'rgba(146, 146, 146, 1)',
