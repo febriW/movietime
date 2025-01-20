@@ -1,14 +1,29 @@
-<script setup>
+<script setup lang="ts">
 import 'vue3-carousel/carousel.css';
 import { Carousel, Slide, Pagination } from 'vue3-carousel';
 
-const images = Array.from({ length: 10 }, (_, index) => ({
-  id: index + 1,
-  url: `https://picsum.photos/800/600?random=${index + 1}`,
-}));
+ interface Result {
+  backdrop_path: string
+  id: number
+  title: string
+  original_title: string
+  overview: string
+  poster_path: string
+  media_type: string
+  adult: boolean
+  original_language: string
+  genre_ids: number[]
+  popularity: number
+  release_date: string
+  video: boolean
+  vote_average: number
+  vote_count: number
+}
+
+const { pending, data: movies } = await useLazyFetch<{ results: Result[] }>('/api/movies/trending')
 
 const config = {
-    autoplay: 90000,
+    autoplay: 4000,
     height: 531,
     itemsToShow: 3,
     itemsToScroll: 1,
@@ -19,8 +34,10 @@ const config = {
 
 <template>
   <Carousel v-bind="config" class="bg-baseColor2">
-    <Slide v-for="image in images" :key="image.id">
-      <CardCarousel />
+    <Slide v-for="movie in movies?.results.slice(0, 6)" :key="movie.id">
+      <CardCarousel
+        :data=movie 
+      />
     </Slide>
     <template #addons>
       <Pagination />

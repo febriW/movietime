@@ -22,7 +22,7 @@
             <div class="header-categories group/cat-nav">
                 <img src="~/assets/icon/menu.svg" />
                 <p>CATEGORIES</p>
-                <div class="hidden group-hover/cat-nav:block absolute z-20 top-6 flex justify-center bg-white drop-shadow-md rounded w-[153px] h-fit">
+                <div class="hidden group-hover/cat-nav:block absolute z-20 top-6 flex justify-center bg-white drop-shadow-md rounded w-fit h-fit">
                     <p v-for="menu in CategoriesMenu" :key="menu.name">
                         {{ menu.name }}
                     </p>
