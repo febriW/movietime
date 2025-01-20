@@ -1,0 +1,45 @@
+
+.body__wrapper {
+    @apply relative flex flex-col bg-baseColor1;
+
+    &--bg {
+        @apply absolute bg-baseColor1 h-[333px] w-full
+    }
+
+    &__container {
+        @apply px-[120px] my-28;
+
+        &--navigation {
+            @apply flex flex-col;
+
+            hr {
+                @apply border-0 w-[112px] h-[6px] bg-[#E74C3C] rounded-md z-20;
+            }
+
+            &__2 {
+                @apply flex flex-row justify-between z-20 mb-[43px];
+
+                p {
+                    @apply text-white mt-3 text-2xl
+                }
+
+                &--button {
+                    @apply flex flex-row gap-[37px];
+
+                    button {
+                        @apply rounded-full text-white bg-red-600 px-4;
+
+                        &:not(.active) {
+                            @apply bg-baseColor2
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+        &--listMovie {
+            @apply grid grid-flow-row grid-cols-7 gap-x-2 gap-y-6
+        }
+    }
+}
