@@ -17,7 +17,7 @@ defineProps<{data: IMovieWithGenre}>()
                             <span class="rating">{{ roundRating(data.vote_average) }}</span>
                         </div>
                         <h2 class="title">{{ data.title }}</h2>
-                        <p class="subtitle">{{ data?.release_date?.match(/\d{4}/)?.[0] }} • {{ data.genre_name }}</p>
+                        <p class="subtitle">{{ data?.release_date?.match(/\d{4}/)?.[0] }} • {{ data.genre_name[0] }}</p>
                         <p class="description line-clamp-[11]">{{ data.overview }}</p>
                     </div>
                 </div>
