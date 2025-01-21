@@ -1,14 +1,9 @@
 <script setup lang="ts">
     import type { IGenres } from '~/types/Genres'
-    import type { IMovieRes } from '~/types/Movies'
+    import type { IMovieWithGenre } from '~/types/Movies'
     const config = useRuntimeConfig()
     import noImage from '~/assets/image/no-image.webp' 
-    const props = defineProps<{data: IMovieRes}>()
-    const { status, data: genreList } = await useLazyFetch<{ genres: IGenres[] }>('/api/movies/genre')
-    const getGenreNameById = (id: any) => {
-        const genre = genreList?.value?.genres?.find(genre => genre.id === id)
-        return genre ? genre.name : 'Unknown' 
-    }
+    const props = defineProps<{data: IMovieWithGenre}>()
     const posterSrc = computed(() => { return props.data.poster_path ? `${config.public.imageUrl}/original/${props.data.poster_path}` : noImage; })
 </script>
 <template>
@@ -20,16 +15,16 @@
                 <div class="flex flex-col justify-center items-center gap-12 h-full">
                     <div class="flex flex-row gap-2 font-bold text-2xl">
                         <img src="~/assets/icon/Star.svg" class="flex justify-center h-[32px] w-[32px]" />
-                        <p>{{ roundRating(props.data.vote_average) }}</p>
+                        <p>{{ roundRating(data.vote_average) }}</p>
                     </div>
-                    <p>{{ getGenreNameById(props.data.genre_ids[0]) }}</p>
+                    <p>{{ data.genre_name[0] }}</p>
                     <button class="flex justify-center bg-buttonCard px-8 py-2 font-bold text-sm rounded-3xl w-[107px]">View</button>
                 </div>
             </div>
         </div>
         <div id="title">
-            <p class="text-titleCard font-bold text-base line-clamp-1">{{ props.data.original_title }}</p>
-            <p class="text-subtitleCard font-thin text-sm">{{ props?.data?.release_date?.match(/\d{4}/)?.[0] }}</p>
+            <p class="text-titleCard font-bold text-base line-clamp-1">{{ data.original_title }}</p>
+            <p class="text-subtitleCard font-thin text-sm">{{ data?.release_date?.match(/\d{4}/)?.[0] }}</p>
         </div>
     </div>
 </template>
